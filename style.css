@@ -1,0 +1,50 @@
+/* Custom styles */
+body {
+  font-family: Arial, sans-serif;
+}
+
+/* Header and Footer theming */
+.ui-header .ui-title,
+.ui-footer .ui-title {
+  text-align: center !important;
+}
+
+/* Thumbnails in list */
+.ui-listview img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 6px 10px 6px 6px;
+}
+
+/* Profile picture on details page */
+.profile-pic-large {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.profile-pic-large img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 3px solid #ccc;
+  object-fit: cover;
+}
+
+.contact-details-content {
+  text-align: center;
+}
+
+.contact-details-content .ui-listview {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/* Custom button theme for delete */
+.ui-btn.ui-btn-r {
+  background-color: #f44336 !important; /* Red for delete */
+  border-color: #d32f2f !important;
+  color: #fff !important;
+  text-shadow: 0 1px 0 #b71c1c !important;
+}

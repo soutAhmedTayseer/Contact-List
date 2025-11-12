@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Contact List App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link
+      rel="stylesheet"
+      href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css"
+    />
+
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+
+  <body>
+    <div data-role="page" id="home">
+      <div data-role="header" data-theme="b">
+        <h1>Contact List</h1>
+        <a
+          href="#addContactPage"
+          data-icon="plus"
+          data-iconpos="notext"
+          class="ui-btn-right"
+          >Add</a
+        >
+      </div>
+
+      <div data-role="content">
+        <ul
+          data-role="listview"
+          data-filter="true"
+          data-filter-placeholder="Filter items..."
+          id="contactList"
+        ></ul>
+      </div>
+
+      <div data-role="footer" data-position="fixed" data-theme="b">
+        <h4>Contact List App</h4>
+      </div>
+    </div>
+
+    <!-- Add / Edit Contact Page -->
+    <div data-role="page" id="addContactPage">
+      <div data-role="header" data-theme="b">
+        <a
+          href="#home"
+          data-icon="back"
+          data-iconpos="notext"
+          class="ui-btn-left"
+          >Back</a
+        >
+        <h1 id="addEditHeader">New Contact</h1>
+      </div>
+
+      <div data-role="content">
+        <form id="contactForm">
+          <input type="hidden" id="contactId" value="" />
+
+          <label for="name">Name:</label>
+          <input
+            type="text"
+            name="name"
+            id="name"
+            value=""
+            data-clear-btn="true"
+          />
+
+          <label for="phone">Phone:</label>
+          <input
+            type="tel"
+            name="phone"
+            id="phone"
+            value=""
+            data-clear-btn="true"
+            placeholder="(XXX) XXX-XXXX"
+          />
+
+          <label for="email">Email:</label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            value=""
+            data-clear-btn="true"
+          />
+
+          <fieldset data-role="controlgroup" data-type="horizontal">
+            <legend>Gender:</legend>
+            <input type="radio" name="gender" id="male" value="male" checked />
+            <label for="male">Male</label>
+            <input type="radio" name="gender" id="female" value="female" />
+            <label for="female">Female</label>
+          </fieldset>
+
+          <a href="#" data-role="button" data-theme="b" id="saveContactBtn"
+            >Save</a
+          >
+          <a
+            href="#home"
+            data-role="button"
+            data-theme="a"
+            id="cancelContactBtn"
+            >Cancel</a
+          >
+        </form>
+      </div>
+
+      <div data-role="footer" data-position="fixed" data-theme="b">
+        <h4>Contact List App</h4>
+      </div>
+    </div>
+
+    <!-- Contact Details Page -->
+    <div data-role="page" id="contactDetailsPage">
+      <div data-role="header" data-theme="b">
+        <a
+          href="#home"
+          data-icon="back"
+          data-iconpos="notext"
+          class="ui-btn-left"
+          >Back</a
+        >
+        <h1 id="detailsName">Details</h1>
+        <a
+          href="#"
+          data-icon="edit"
+          data-iconpos="notext"
+          class="ui-btn-right"
+          id="editFromDetailsBtn"
+          >Edit</a
+        >
+      </div>
+
+      <div data-role="content" class="contact-details-content">
+        <div class="profile-pic-large ui-corner-all">
+          <img id="detailsPic" src="img/male.png" alt="Profile Picture" />
+        </div>
+
+        <ul data-role="listview" data-inset="true">
+          <li id="detailsPhone"></li>
+          <li id="detailsEmail"></li>
+          <li id="detailsGender"></li>
+        </ul>
+
+        <a
+          href="#"
+          data-role="button"
+          data-icon="delete"
+          data-theme="r"
+          id="deleteFromDetailsBtn"
+          >Delete Contact</a
+        >
+      </div>
+
+      <div data-role="footer" data-position="fixed" data-theme="b">
+        <h4>Contact List App</h4>
+      </div>
+    </div>
+  </body>
+</html>
